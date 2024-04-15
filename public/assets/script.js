@@ -82,7 +82,7 @@ $(document).ready(function() {
                 $('#agregarNuevoRecordatorioModal').modal('hide');
 
                 // Recargar la página después de agregar el nuevo recordatorio
-
+                location.reload();
 
             },
             error: function(xhr, status, error) {
