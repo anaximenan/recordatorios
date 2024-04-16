@@ -138,6 +138,8 @@
 </div>
 
 
+
+
 <?php $viewData = json_encode($recordatorios); ?>
 <script>
     let viewData = <?php echo $viewData; ?>;

@@ -53,11 +53,11 @@ class RecordatoriosController extends Controller
             $recordatorio->receptores = $request->input('receptores_new');
             $recordatorio->fecha_recordar = $request->input('fecha_recordar_new');
             $recordatorio->estatus = $request->input('estatus_new');
+            dd($request->all());
 
-            // Guardar el nuevo recordatorio en la base de datos
+
             $recordatorio->save();
 
-            // Redireccionar a la vista de recordatorios con un mensaje de éxito
             return redirect()->route('recordatorios.list')->with('success', 'El recordatorio se ha creado correctamente.');
         } catch (\Exception $e) {
             // Si ocurre un error, redireccionar a la vista anterior con un mensaje de error
