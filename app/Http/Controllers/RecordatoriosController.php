@@ -12,7 +12,7 @@ class RecordatoriosController extends Controller
     public function index()
     {
 
-        $recordatorios = Recordatorio::where('receptores', 'like', '%softtek.com')->get();
+        $recordatorios = Recordatorio::where('receptores', 'like', '%softtek.com%')->get();
         $id = $recordatorios[0]['id'];
         return view('recordatorios', ['recordatorios' => $recordatorios, 'id' => $id]);
     }
@@ -22,7 +22,6 @@ class RecordatoriosController extends Controller
         try{
             // Encuentra el recordatorio por su ID
             $recordatorio = Recordatorio::findOrFail($id);
-
 
             // Actualiza los atributos del recordatorio
             $recordatorio->fecha = $request->fecha;
@@ -44,15 +43,17 @@ class RecordatoriosController extends Controller
 
     public function store(Request $request)
     {
+
+
         try {
             // Crear un nuevo objeto Recordatorio con los datos recibidos del formulario
             $recordatorio = new Recordatorio();
-            $recordatorio->fecha = $request->input('fecha_new');
-            $recordatorio->descripcion = $request->input('descripcion_new');
-            $recordatorio->recordatorio = $request->input('recordatorio_new');
-            $recordatorio->receptores = $request->input('receptores_new');
-            $recordatorio->fecha_recordar = $request->input('fecha_recordar_new');
-            $recordatorio->estatus = $request->input('estatus_new');
+            $recordatorio->fecha = $request->input('fecha');
+            $recordatorio->descripcion = $request->input('descripcion');
+            $recordatorio->recordatorio = $request->input('recordatorio');
+            $recordatorio->receptores = $request->input('receptores');
+            $recordatorio->fecha_recordar = $request->input('fecha_recordar');
+            $recordatorio->estatus = $request->input('estatus');
             dd($request->all());
 
 
