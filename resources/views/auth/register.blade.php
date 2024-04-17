@@ -56,7 +56,8 @@
 
                             <div class="form-outline mb-4">
                             <label class="form-label" for="form2Example22">Contraseña</label>
-                              <input type="password" name="password" id="form2Example22" class="form-control" />
+                              <input type="password" name="password" id="form2Example22" class="form-control"
+                              placeholder="Mínimo de 8 caracteres, incluya símbolos o mayúsculas" />
 
                             </div>
 

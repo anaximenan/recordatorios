@@ -44,7 +44,6 @@ class RecordatoriosController extends Controller
     public function store(Request $request)
     {
 
-
         try {
             // Crear un nuevo objeto Recordatorio con los datos recibidos del formulario
             $recordatorio = new Recordatorio();
@@ -54,7 +53,7 @@ class RecordatoriosController extends Controller
             $recordatorio->receptores = $request->input('receptores');
             $recordatorio->fecha_recordar = $request->input('fecha_recordar');
             $recordatorio->estatus = $request->input('estatus');
-            dd($request->all());
+
 
 
             $recordatorio->save();
